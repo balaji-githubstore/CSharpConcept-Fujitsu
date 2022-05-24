@@ -9,27 +9,21 @@ namespace Fujitsu.CSharpConcept
 {
     class Program
     {
-        static void Main (String[] args)
+        //accessmodifier static returntype methodname(arguments)
+        public static double AreaOfCircle(int r)
         {
-            int[] numbers = { 10, 20, 30, 40, 50, 60, 70, 80, 90,100 };
+            double output = 3.14 * r * r;
+            return output;
+        }
+        static void Main(String[] args)
+        {
+            int radius = 10;
 
-            //0 to 7,
-            //for (int i = 0; i < numbers.Length; i++)
-            //{
-            //    Console.WriteLine(numbers[i]);
-            //}
+            double res = Program.AreaOfCircle(10);
+            Console.WriteLine(res);
 
-            Console.WriteLine("---------------------");
-            //print the value which are greater than or equal to 50
-            foreach(int val in numbers)
-            {
-                if(val==50)
-                {
-                    Console.WriteLine(val);
-                    break;
-                }
-            }
-
+            res = Program.AreaOfCircle(20);
+            Console.WriteLine(res);
         }
 
     }
