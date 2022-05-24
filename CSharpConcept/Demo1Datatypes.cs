@@ -11,6 +11,7 @@ namespace Fujitsu.CSharpConcept
     {
         static void Main123(String[] args)
         {
+            //worked on datatypes
             //created by bala
             int a = 100; //a is reserved for int (32bits) ;
 
