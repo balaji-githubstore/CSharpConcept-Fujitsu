@@ -9,37 +9,27 @@ namespace Fujitsu.CSharpConcept
 {
     class Program
     {
-        static void Main(String[] args)
+        static void Main (String[] args)
         {
-            //allocating grade for marks
-            int mark = Convert.ToInt32(Console.ReadLine());
+            int[] numbers = { 10, 20, 30, 40, 50, 60, 70, 80, 90,100 };
 
-            if(mark < 0 || mark > 100)
+            //0 to 7,
+            //for (int i = 0; i < numbers.Length; i++)
+            //{
+            //    Console.WriteLine(numbers[i]);
+            //}
+
+            Console.WriteLine("---------------------");
+            //print the value which are greater than or equal to 50
+            foreach(int val in numbers)
             {
-                Console.WriteLine("invalid mark");
-            }
-            else if (mark >= 90)
-            {
-                Console.WriteLine('A');
-            }
-            else if (mark >= 80 && mark <= 89)
-            {
-                Console.WriteLine("B");
-            }
-            else if(mark >= 60 && mark<=79)
-            {
-                Console.WriteLine("C");
-            }
-            else if (mark >= 45 && mark <= 59)
-            {
-                Console.WriteLine("D");
-            }
-            else 
-            {
-                Console.WriteLine("F");
+                if(val==50)
+                {
+                    Console.WriteLine(val);
+                    break;
+                }
             }
 
-            Console.ReadLine();
         }
 
     }

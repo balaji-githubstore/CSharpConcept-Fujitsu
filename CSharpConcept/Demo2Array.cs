@@ -9,7 +9,7 @@ namespace Fujitsu.CSharpConcept
 {
     class Demo2Array
     {
-        static void Main1(String[] args)
+        static void Main12(String[] args)
         {
             //10, 20, 30, 40, 50
             int[] numbers = new int[5]; //5*32 bits of memory
