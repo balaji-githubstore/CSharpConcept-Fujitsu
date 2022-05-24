@@ -8,11 +8,11 @@ using System.Threading.Tasks;
 
 namespace Fujitsu.CSharpConcept
 {
-    class Program
+    class Demo6
     {
         //accessmodifier static returntype methodname(arguments)
         
-        static void Main(String[] args)
+        static void Main2(String[] args)
         {
             int radius = 10;
 
@@ -25,11 +25,6 @@ namespace Fujitsu.CSharpConcept
             double output=Area.AreaOfTriangle(10.5, 62.2);
             Console.WriteLine(output);
 
-            double powerOutput = Math.Pow(5, 3);
-            Console.WriteLine(powerOutput);
-
-            res = Math.Sqrt(64);
-            Console.WriteLine(res);
         }
 
     }
