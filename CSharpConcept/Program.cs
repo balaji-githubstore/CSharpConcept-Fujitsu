@@ -11,8 +11,7 @@ namespace Fujitsu.CSharpConcept
     {
         static void Main(String[] args)
         {
-
-
+            //allocating grade for marks
             int mark = Convert.ToInt32(Console.ReadLine());
 
             if(mark < 0 || mark > 100)
