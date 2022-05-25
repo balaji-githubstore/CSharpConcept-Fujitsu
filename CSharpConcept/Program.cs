@@ -10,34 +10,38 @@ namespace Fujitsu.CSharpConcept
 {
     class Program
     {
-        //accessmodifier static returntype methodname(arguments)
-        
         static void Main(String[] args)
         {
-            int radius = 10;
+            Employee e1 = Employee.GetEmployeeInstance();
 
-            Area obj=new Area(); //allocate the memory
+            Employee e2 = Employee.GetEmployeeInstance();
+
+            e1.PrintEmployeeDetails();
+            e2.PrintEmployeeDetails();
+
+           // Employee.DisplayEmployeeDetails(Employee.GetEmployeeInstance());
+
+            Employee.companyName = "Fujitsu";
+
+            Employee emp1 = new Employee();
+            Employee emp2 = new Employee(); 
+            Employee emp3=new Employee();
+
+            emp1.empId = 101;
+            emp1.empName = "John";
+            emp1.empSalary = 8000;
            
-            double res = obj.AreaOfCircle(radius);
-            Console.WriteLine(res);
+            emp2.empId = 102;
+            emp2.empName = "Peter";
+            emp2.empSalary = 5000;
 
-            res = obj.AreaOfCircle(20);
-            Console.WriteLine(res);
+            Employee.DisplayEmployeeDetails(emp1);
+            Employee.DisplayEmployeeDetails(emp2);
+            Employee.DisplayEmployeeDetails(emp3);
 
-            double output=Area.AreaOfTriangle(10.5, 62.2);
-            Console.WriteLine(output);
-
-            double powerOutput = Math.Pow(5, 3);
-            Console.WriteLine(powerOutput);
-
-            res = Math.Sqrt(64);
-            Console.WriteLine(res);
-
-            string authorName = Area.GetAuthorName();
-            Console.WriteLine(authorName);
-
-            Area.PrintClassDescription();
-            Area.Quit();
+            emp2.PrintEmployeeDetails();
+            emp3.PrintEmployeeDetails();
+            emp1.PrintEmployeeDetails();
         }
 
     }
