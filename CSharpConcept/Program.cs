@@ -16,10 +16,12 @@ namespace Fujitsu.CSharpConcept
         {
             int radius = 10;
 
-            double res = Area.AreaOfCircle(10);
+            Area obj=new Area(); //allocate the memory
+           
+            double res = obj.AreaOfCircle(radius);
             Console.WriteLine(res);
 
-            res = Area.AreaOfCircle(20);
+            res = obj.AreaOfCircle(20);
             Console.WriteLine(res);
 
             double output=Area.AreaOfTriangle(10.5, 62.2);
@@ -30,6 +32,12 @@ namespace Fujitsu.CSharpConcept
 
             res = Math.Sqrt(64);
             Console.WriteLine(res);
+
+            string authorName = Area.GetAuthorName();
+            Console.WriteLine(authorName);
+
+            Area.PrintClassDescription();
+            Area.Quit();
         }
 
     }

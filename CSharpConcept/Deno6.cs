@@ -16,11 +16,11 @@ namespace Fujitsu.CSharpConcept
         {
             int radius = 10;
 
-            double res = Area.AreaOfCircle(10);
-            Console.WriteLine(res);
+           // double res = Area.AreaOfCircle(10);
+           // Console.WriteLine(res);
 
-            res = Area.AreaOfCircle(20);
-            Console.WriteLine(res);
+          //  res = Area.AreaOfCircle(20);
+          //  Console.WriteLine(res);
 
             double output=Area.AreaOfTriangle(10.5, 62.2);
             Console.WriteLine(output);

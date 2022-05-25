@@ -8,7 +8,7 @@ namespace CSharpConcept
 {
     internal class Area
     {
-        public static double AreaOfCircle(int r)
+        public double AreaOfCircle(int r)
         {
             double output = 3.14 * r * r;
             return output;
@@ -18,5 +18,22 @@ namespace CSharpConcept
             return (base1 * height) / 2;
         }
 
+        public static string GetAuthorName()
+        {
+            string name = "Balaji Dinakaran";
+            return name;
+        }
+
+        public static void PrintClassDescription()
+        {
+
+        }
+
+        public static void Quit()
+        {
+
+        }
     }
 }
+
+

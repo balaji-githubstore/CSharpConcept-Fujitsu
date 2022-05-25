@@ -10,6 +10,7 @@ namespace Fujitsu.CSharpConcept.Calc
     {
         public static void Add(int a,int b)
         {
+
             Console.WriteLine(a+b);
         }
 
