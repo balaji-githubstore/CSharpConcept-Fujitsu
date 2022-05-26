@@ -9,6 +9,12 @@ Relative XPath-
 Grouping of xpath - starts at 1
 (//button[@type='submit'])[2]
 
+
+Contains
+//tagname[contains(@attribute,'')] 
+//tagname[contains(text(),'')] 
+
+
 Validate in chrome --> inspect & ctrl+f
 Example:
 //input[@value='-1']
@@ -18,3 +24,12 @@ Example:
 (//button[@type='submit'])[2]
 
 //button[text()='Sign Up']
+
+//b[contains(text(),'phpMy')]
+
+
+
+
+0->1st tab session id
+1->2nd tab session id
+2->3rd tab session id

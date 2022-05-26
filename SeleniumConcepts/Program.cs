@@ -6,6 +6,7 @@ using OpenQA.Selenium.Edge;
 using OpenQA.Selenium.Support.UI;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,42 +21,27 @@ namespace SeleniumConcepts
             driver.Manage().Window.Maximize();
             driver.Manage().Timeouts().ImplicitWait=TimeSpan.FromSeconds(30);
 
-            driver.Url = "https://www.facebook.com/"; 
+            driver.Url = "https://www.db4free.net/";
 
-            //click on create new account 
-            driver.FindElement(By.LinkText("Create New Account")).Click();
+            //click on phpMyAdmin
+            //b[contains(text(),'phpMy')]
+            driver.FindElement(By.PartialLinkText("phpMyAdmin")).Click();
 
-            //enter firstname as JOhn
-            driver.FindElement(By.Name("firstname")).SendKeys("John");
+            ReadOnlyCollection<string> windows= driver.WindowHandles;
 
-            //enter lastname as wick
-            driver.FindElement(By.Name("lastname")).SendKeys("John");
+            Console.WriteLine(windows[0]);
+            Console.WriteLine(windows[1]);
 
-            //enter password as welcome@123
-            driver.FindElement(By.Id("password_step_input")).SendKeys("welcome@123");
+            Console.WriteLine(driver.Title);
 
-            //15 Dec 2000
-            SelectElement selectDay = new SelectElement(driver.FindElement(By.Id("day")));
-            selectDay.SelectByText("15");
-
-            //Select Dec
-            SelectElement selectMonth = new SelectElement(driver.FindElement(By.Name("birthday_month")));
-            selectMonth.SelectByText("Dec");
-            // selectMonth.SelectByValue("12");
-            //selectMonth.SelectByIndex(11);
-
-            //Select 2000
-            SelectElement selectYear = new SelectElement(driver.FindElement(By.Id("year")));
-            selectYear.SelectByText("2000");
+            driver.SwitchTo().Window(windows[1]);
+            driver.FindElement(By.Id("input_username")).SendKeys("Bala");
+            //enter password
+            //click on login
 
 
-            //click on Custom radio button
-            driver.FindElement(By.XPath("//input[@value='-1']")).Click();
+            driver.Quit(); //close the browser
 
-            //click on sign up
-            driver.FindElement(By.Name("websubmit")).Click();
-
-            
         }
     }
 }
