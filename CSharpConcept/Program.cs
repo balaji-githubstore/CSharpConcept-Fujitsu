@@ -12,12 +12,12 @@ namespace Fujitsu.CSharpConcept
     {
         static void Main(String[] args)
         {
-            Employee e1 = Employee.GetEmployeeInstance();
+            //Employee e1 = Employee.GetEmployeeInstance();
 
-            Employee e2 = Employee.GetEmployeeInstance();
+            //Employee e2 = Employee.GetEmployeeInstance();
 
-            e1.PrintEmployeeDetails();
-            e2.PrintEmployeeDetails();
+            //e1.PrintEmployeeDetails();
+            //e2.PrintEmployeeDetails();
 
            // Employee.DisplayEmployeeDetails(Employee.GetEmployeeInstance());
 
@@ -27,13 +27,15 @@ namespace Fujitsu.CSharpConcept
             Employee emp2 = new Employee(); 
             Employee emp3=new Employee();
 
-            emp1.empId = 101;
+            emp1.EmpId = 150; //set 
             emp1.empName = "John";
             emp1.empSalary = 8000;
-           
-            emp2.empId = 102;
+
+            emp2.EmpId = 102;
             emp2.empName = "Peter";
             emp2.empSalary = 5000;
+
+            Console.WriteLine(emp1.EmpId);
 
             Employee.DisplayEmployeeDetails(emp1);
             Employee.DisplayEmployeeDetails(emp2);

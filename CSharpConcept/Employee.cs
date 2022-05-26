@@ -8,10 +8,29 @@ namespace CSharpConcept
 {
     internal class Employee
     {
-        public int empId;
+        
         public string empName;
         public double empSalary;
         public static string companyName;
+
+        private int empId;
+        public int EmpId
+        {
+            get 
+            { 
+                return empId; 
+            }
+            set { 
+                if(value>100)
+                {
+                    empId = value;
+                }
+                else
+                {
+                    Console.WriteLine(" Employee Id is invalid!!");
+                }
+            }
+        }
 
         public static void DisplayEmployeeDetails(Employee e)
         {
@@ -31,10 +50,10 @@ namespace CSharpConcept
             Console.WriteLine("------------------------");
         }
 
-        public static Employee GetEmployeeInstance()
-        {
-            Employee emp = new Employee();
-            return emp;
-        }
+        //public static Employee GetEmployeeInstance()
+        //{
+        //    Employee emp = new Employee();
+        //    return emp;
+        //}
     }
 }
