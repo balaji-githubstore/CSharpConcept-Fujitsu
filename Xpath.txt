@@ -1,0 +1,11 @@
+XPath - 
+Absolute XPath - /html/body/div[3]/div[2]/div/div/div[2]/div/div/div[1]/form/div[1]/div[7]/span/span[3]/input
+
+Relative XPath-
+
+//tagname[@attribute='']
+//tagname[text()='']
+
+Validate in chrome --> inspect & ctrl+f
+Example:
+//input[@value='-1']

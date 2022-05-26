@@ -19,35 +19,25 @@ namespace SeleniumConcepts
             driver.Manage().Window.Maximize();
             driver.Manage().Timeouts().ImplicitWait=TimeSpan.FromSeconds(30);
 
-            driver.Url = "https://opensource-demo.orangehrmlive.com/"; //wait for page load to complete
+            driver.Url = "https://www.facebook.com/"; 
 
-            string currentUrl=driver.Url;
-            Console.WriteLine(currentUrl);
+            //click on create new account 
+            driver.FindElement(By.LinkText("Create New Account")).Click();
 
-            string title=driver.Title;
-            Console.WriteLine(title);
+            //enter firstname as JOhn
+            driver.FindElement(By.Name("firstname")).SendKeys("John");
 
-            string pageSource=driver.PageSource;
-            Console.WriteLine(pageSource);
+            //enter lastname as wick
+            driver.FindElement(By.Name("lastname")).SendKeys("John");
 
-            Console.WriteLine(pageSource.Contains("LOGIN Panel"));
+            //enter password as welcome@123
+            driver.FindElement(By.Id("password_step_input")).SendKeys("welcome@123");
 
-            // By loc= By.Id("txtUsername");
-            //IWebElement ele = driver.FindElement(loc);
-            //ele.SendKeys("Admin");
+            //click on Custom radio button
+            driver.FindElement(By.XPath("//input[@value='-1']")).Click();
 
-            //IWebElement ele=driver.FindElement(By.Id("txtUsername"));
-            //ele.SendKeys("Admin");
+            //click on sign up
 
-            driver.FindElement(By.Id("txtUsername")).SendKeys("Admin");
-            driver.FindElement(By.Id("txtPassword")).SendKeys("admin123");
-            driver.FindElement(By.Id("btnLogin")).Click();
-
-            Console.WriteLine(driver.Url);
-
-            driver.FindElement(By.Id("welcome")).Click();
-            
-            driver.FindElement(By.LinkText("Logout")).Click();
         }
     }
 }
