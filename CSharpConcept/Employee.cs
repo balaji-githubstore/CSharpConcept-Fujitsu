@@ -6,22 +6,56 @@ using System.Threading.Tasks;
 
 namespace CSharpConcept
 {
-    internal class Employee
+    public class Employee
     {
-        
+        private int empId;
         public string empName;
         public double empSalary;
         public static string companyName;
 
-        private int empId;
+        public Employee()
+        {
+            Console.WriteLine("Object Created!!");
+            Console.WriteLine("Launch Browser");
+        }
+        public Employee(int empId)
+        {
+            this.empId = empId;
+            Console.WriteLine("Object Created!!");
+            Console.WriteLine("Launch Browser");
+        }
+
+        public Employee(int empId, string empName)
+        {
+            this.empId = empId;
+            this.empName = empName;
+            Console.WriteLine("Object Created!!");
+            Console.WriteLine("Launch Browser");
+        }
+        public Employee(string empName, int empId)
+        {
+            this.empId = empId;
+            this.empName = empName;
+            Console.WriteLine("Object Created!!");
+            Console.WriteLine("Launch Browser");
+        }
+
+        public Employee(int empId, double sal)
+        {
+            this.empId = empId;
+            Console.WriteLine("Object Created!!");
+            Console.WriteLine("Launch Browser");
+        }
+
         public int EmpId
         {
-            get 
-            { 
-                return empId; 
+            get
+            {
+                return empId;
             }
-            set { 
-                if(value>100)
+            set
+            {
+                if (value > 100)
                 {
                     empId = value;
                 }
@@ -43,8 +77,8 @@ namespace CSharpConcept
 
         public void PrintEmployeeDetails()
         {
-            Console.WriteLine(empId);
-            Console.WriteLine(empName);
+            Console.WriteLine(this.empId);
+            Console.WriteLine(this.empName);
             Console.WriteLine(empSalary);
             Console.WriteLine(Employee.companyName);
             Console.WriteLine("------------------------");

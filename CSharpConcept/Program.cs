@@ -12,6 +12,15 @@ namespace Fujitsu.CSharpConcept
     {
         static void Main(String[] args)
         {
+            Calculator cal = new Calculator();
+
+            cal.Add(1, 1);
+
+            Console.WriteLine(5);
+
+            double maxValue=Math.Max(10, 50.2);
+            Console.WriteLine(maxValue);
+
             //Employee e1 = Employee.GetEmployeeInstance();
 
             //Employee e2 = Employee.GetEmployeeInstance();
@@ -19,13 +28,13 @@ namespace Fujitsu.CSharpConcept
             //e1.PrintEmployeeDetails();
             //e2.PrintEmployeeDetails();
 
-           // Employee.DisplayEmployeeDetails(Employee.GetEmployeeInstance());
+            // Employee.DisplayEmployeeDetails(Employee.GetEmployeeInstance());
 
             Employee.companyName = "Fujitsu";
 
             Employee emp1 = new Employee();
-            Employee emp2 = new Employee(); 
-            Employee emp3=new Employee();
+            Employee emp2 = new Employee(102, "Peter"); 
+            Employee emp3=new Employee(103,5.2);
 
             emp1.EmpId = 150; //set 
             emp1.empName = "John";
