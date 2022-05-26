@@ -16,6 +16,8 @@ namespace SeleniumConcepts
         static void Main(String[] args)
         {
             IWebDriver driver = new ChromeDriver();
+            driver.Manage().Window.Maximize();
+            driver.Manage().Timeouts().ImplicitWait=TimeSpan.FromSeconds(30);
 
             driver.Url = "https://opensource-demo.orangehrmlive.com/"; //wait for page load to complete
 
@@ -44,7 +46,7 @@ namespace SeleniumConcepts
             Console.WriteLine(driver.Url);
 
             driver.FindElement(By.Id("welcome")).Click();
-            Thread.Sleep(20000);
+            
             driver.FindElement(By.LinkText("Logout")).Click();
         }
     }
