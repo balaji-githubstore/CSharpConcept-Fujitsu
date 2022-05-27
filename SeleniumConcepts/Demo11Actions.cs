@@ -15,21 +15,22 @@ using System.Threading.Tasks;
 namespace SeleniumConcepts
 {
     //Unhandled exception.OpenQA.Selenium.ElementNotInteractableException: element not interactable
-    internal class Program
+    internal class Demo11Actions
     {
-        static void Main(String[] args)
+        static void Mains(String[] args)
         {
             IWebDriver driver = new ChromeDriver();
             driver.Manage().Window.Maximize();
             driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
 
-            //driver.get('http://domain\username:password@abc.com')
+            driver.Url = "https://nasscom.in/";
 
-            driver.Url = "https://john:john123@softwaretesting.com/";
+            
+            Actions action=new Actions(driver);
+            action.MoveToElement(driver.FindElement(By.XPath("//a[text()='Membership']"))).Perform();
 
-           // driver.SwitchTo().Alert().SetAuthenticationCredentials("john", "john123");
-
+            driver.FindElement(By.XPath("//a[text()='Members Listing']")).Click();
+           
         }
     }
 }
-
