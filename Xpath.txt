@@ -29,7 +29,7 @@ Example:
 
 (//div[@class='alert alert-danger'])[3]
 
-
+//frame[contains(@src,'RSNBLo')]
 
 0->1st tab session id
 1->2nd tab session id

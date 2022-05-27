@@ -13,9 +13,9 @@ using System.Threading.Tasks;
 
 namespace SeleniumConcepts
 {
-    internal class Program
+    internal class Demo5FrameWebElement
     {
-        static void Main(String[] args)
+        static void Maiwn(String[] args)
         {
             IWebDriver driver = new ChromeDriver();
             driver.Manage().Window.Maximize();
@@ -23,7 +23,7 @@ namespace SeleniumConcepts
 
             driver.Url = "https://netbanking.hdfcbank.com/netbanking/";
 
-            driver.SwitchTo().Frame("login_page");
+            driver.SwitchTo().Frame(driver.FindElement(By.XPath("//frame[@name='login_page']")));
 
             driver.FindElement(By.Name("fldLoginUserId")).SendKeys("test123");
             //click on continue
