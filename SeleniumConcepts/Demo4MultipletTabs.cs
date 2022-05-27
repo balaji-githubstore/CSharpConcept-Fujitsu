@@ -25,8 +25,7 @@ namespace SeleniumConcepts
             driver.FindElement(By.PartialLinkText("phpMyAdmin")).Click();
 
             driver.SwitchTo().Window(driver.WindowHandles[1]);
-       
-            
+         
             driver.FindElement(By.Id("input_username")).SendKeys("Bala");
             driver.FindElement(By.Id("input_password")).SendKeys("Bala");
             driver.FindElement(By.Id("input_go")).Click();

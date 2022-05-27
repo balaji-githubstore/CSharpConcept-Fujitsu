@@ -19,15 +19,14 @@ namespace SeleniumConcepts
         {
             IWebDriver driver = new ChromeDriver();
             driver.Manage().Window.Maximize();
-            driver.Manage().Timeouts().ImplicitWait=TimeSpan.FromSeconds(30);
-
+            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(30);
             driver.Url = "https://www.db4free.net/";
 
             //click on phpMyAdmin
             //b[contains(text(),'phpMy')]
             driver.FindElement(By.PartialLinkText("phpMyAdmin")).Click();
 
-            ReadOnlyCollection<string> windows= driver.WindowHandles;
+            ReadOnlyCollection<string> windows = driver.WindowHandles;
 
             Console.WriteLine(windows[0]);
             Console.WriteLine(windows[1]);
@@ -40,7 +39,7 @@ namespace SeleniumConcepts
             //click on login
 
             //driver.Close();
-           // driver.Quit(); //close the browser
+            // driver.Quit(); //close the browser
 
         }
     }
