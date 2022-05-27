@@ -13,9 +13,9 @@ using System.Threading.Tasks;
 
 namespace SeleniumConcepts
 {
-    internal class Program
+    internal class Demo8Alert
     {
-        static void Main(String[] args)
+        static void Main2(String[] args)
         {
             IWebDriver driver = new ChromeDriver();
             driver.Manage().Window.Maximize();

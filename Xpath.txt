@@ -15,6 +15,18 @@ Contains
 //tagname[contains(text(),'')] 
 
 
+And-Or
+
+Following-preceding 
+
+Parent-Child
+Parent- 
+//img[@alt='Go']/.. 
+
+Ancestor-Descendant 
+
+
+
 Validate in chrome --> inspect & ctrl+f
 Example:
 //input[@value='-1']
