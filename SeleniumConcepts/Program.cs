@@ -21,17 +21,9 @@ namespace SeleniumConcepts
             driver.Manage().Window.Maximize();
             driver.Manage().Timeouts().ImplicitWait=TimeSpan.FromSeconds(10);
 
-            driver.Url = "https://netbanking.hdfcbank.com/netbanking/IpinResetUsingOTP.htm";
+            driver.Url = "https://www.ilovepdf.com/pdf_to_word";
 
-            //click on Go
-            driver.FindElement(By.XPath("//img[@alt='Go']")).Click();
-
-            string alertText=driver.SwitchTo().Alert().Text;
-            Console.WriteLine(alertText);
-
-            //driver.SwitchTo().Alert().SendKeys("jrr");
-
-            driver.SwitchTo().Alert().Accept();
+            driver.FindElement(By.XPath("//input[@type='file']")).SendKeys(@"C:\Selenium Session\letter.pdf");
         }
     }
 }

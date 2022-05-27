@@ -43,6 +43,8 @@ Example:
 
 //frame[contains(@src,'RSNBLo')]
 
+//input[@type='file']
+
 0->1st tab session id
 1->2nd tab session id
 2->3rd tab session id
