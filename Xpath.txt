@@ -27,6 +27,7 @@ Example:
 
 //b[contains(text(),'phpMy')]
 
+(//div[@class='alert alert-danger'])[3]
 
 
 

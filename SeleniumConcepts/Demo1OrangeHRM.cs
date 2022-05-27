@@ -36,10 +36,10 @@ namespace SeleniumConcepts
             //IWebElement ele = driver.FindElement(loc);
             //ele.SendKeys("Admin");
 
-            //IWebElement ele=driver.FindElement(By.Id("txtUsername"));
-            //ele.SendKeys("Admin");
+            IWebElement ele = driver.FindElement(By.Id("txtUsername"));
+            ele.SendKeys("Admin");
 
-            driver.FindElement(By.Id("txtUsername")).SendKeys("Admin");
+            //driver.FindElement(By.Id("txtUsername")).SendKeys("Admin");
             driver.FindElement(By.Id("txtPassword")).SendKeys("admin123");
             driver.FindElement(By.Id("btnLogin")).Click();
 

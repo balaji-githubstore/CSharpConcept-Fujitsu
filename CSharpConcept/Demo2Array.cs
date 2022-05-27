@@ -13,13 +13,14 @@ namespace Fujitsu.CSharpConcept
         {
             //10, 20, 30, 40, 50
             int[] numbers = new int[5]; //5*32 bits of memory
-
+         
             numbers[0] = 10;
             numbers[1] = 20;
             numbers[2] = 30;
             numbers[3] = 40;
             numbers[4] = 50;
 
+          //  numbers = new int[10];
 
             Console.WriteLine(numbers[0]);
             Console.WriteLine(numbers[1]);

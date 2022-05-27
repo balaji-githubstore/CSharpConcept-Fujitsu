@@ -19,28 +19,18 @@ namespace SeleniumConcepts
         {
             IWebDriver driver = new ChromeDriver();
             driver.Manage().Window.Maximize();
-            driver.Manage().Timeouts().ImplicitWait=TimeSpan.FromSeconds(30);
+            driver.Manage().Timeouts().ImplicitWait=TimeSpan.FromSeconds(10);
 
-            driver.Url = "https://www.db4free.net/";
+            driver.Url = "https://netbanking.hdfcbank.com/netbanking/";
 
-            //click on phpMyAdmin
-            //b[contains(text(),'phpMy')]
-            driver.FindElement(By.PartialLinkText("phpMyAdmin")).Click();
+            driver.SwitchTo().Frame(driver.FindElement(By.XPath("//frame[@name='login_page']")));
 
-            ReadOnlyCollection<string> windows= driver.WindowHandles;
+            driver.FindElement(By.Name("fldLoginUserId")).SendKeys("test123");
+            //click on continue
+            driver.FindElement(By.LinkText("CONTINUE")).Click();
 
-            Console.WriteLine(windows[0]);
-            Console.WriteLine(windows[1]);
-
-            Console.WriteLine(driver.Title);
-
-            driver.SwitchTo().Window(windows[1]);
-            driver.FindElement(By.Id("input_username")).SendKeys("Bala");
-            //enter password
-            //click on login
-
-
-            driver.Quit(); //close the browser
+            //will switch to main html
+            driver.SwitchTo().DefaultContent();
 
         }
     }
