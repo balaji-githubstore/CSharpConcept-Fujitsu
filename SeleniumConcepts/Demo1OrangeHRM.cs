@@ -46,8 +46,13 @@ namespace SeleniumConcepts
             Console.WriteLine(driver.Url);
 
             driver.FindElement(By.Id("welcome")).Click();
-            
+
+           string href= driver.FindElement(By.LinkText("Logout")).GetAttribute("href");
+            Console.WriteLine(href);
+
             driver.FindElement(By.LinkText("Logout")).Click();
+
+           
         }
     }
 }

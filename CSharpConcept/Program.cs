@@ -21,7 +21,7 @@ namespace Fujitsu.CSharpConcept
             double maxValue=Math.Max(10, 50.2);
             Console.WriteLine(maxValue);
 
-            //Employee e1 = Employee.GetEmployeeInstance();
+          //  var e1 = Employee.GetEmployeeInstance();
 
             //Employee e2 = Employee.GetEmployeeInstance();
 
@@ -53,6 +53,15 @@ namespace Fujitsu.CSharpConcept
             emp2.PrintEmployeeDetails();
             emp3.PrintEmployeeDetails();
             emp1.PrintEmployeeDetails();
+
+            //var a = "10.2"; //a is register for double
+            //a = "balaji";
+            //a = 10;
+
+            //dynamic b = 10.2;
+            //b = 10;
+            //b = "ddd";
+
         }
 
     }

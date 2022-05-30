@@ -16,9 +16,9 @@ using System.Threading.Tasks;
 namespace SeleniumConcepts
 {
     //Unhandled exception.OpenQA.Selenium.ElementNotInteractableException: element not interactable
-    internal class Program
+    internal class Program2
     {
-        static void Main(String[] args)
+        static void Main2(String[] args)
         {
             IWebDriver driver = new ChromeDriver();
 

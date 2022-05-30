@@ -84,10 +84,10 @@ namespace CSharpConcept
             Console.WriteLine("------------------------");
         }
 
-        //public static Employee GetEmployeeInstance()
-        //{
-        //    Employee emp = new Employee();
-        //    return emp;
-        //}
+        public static Employee GetEmployeeInstance()
+        {
+            Employee emp = new Employee();
+            return emp;
+        }
     }
 }

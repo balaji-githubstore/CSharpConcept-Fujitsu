@@ -2,6 +2,7 @@
 
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
+using OpenQA.Selenium.Chromium;
 using OpenQA.Selenium.Edge;
 using OpenQA.Selenium.Interactions;
 using OpenQA.Selenium.Support.UI;
@@ -20,37 +21,45 @@ namespace SeleniumConcepts
         static void Main(String[] args)
         {
             IWebDriver driver = new ChromeDriver();
+
             driver.Manage().Window.Maximize();
             driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
 
-            driver.Url = "https://www.online.citibank.co.in/";
+            driver.Url = "https://www.google.com/";
 
-            //img[@class='appClose']
-            driver.FindElement(By.ClassName("appClose")).Click();
+            //int count = driver.FindElements(By.TagName("hello")).Count();
+            //Console.WriteLine(count);
 
-            driver.FindElement(By.XPath("//span[text()='Login']")).Click();
+            //ReadOnlyCollection<IWebElement> elements= driver.FindElements(By.TagName("a"));
+            ReadOnlyCollection<IWebElement> elements = driver.FindElements(By.TagName("a"));
+            int linkCount=elements.Count();
+            Console.WriteLine(linkCount);
 
-            driver.SwitchTo().Window(driver.WindowHandles[1]);
+            //elements[0].Click();
+            //Console.WriteLine(elements[0].Text);
+            //Console.WriteLine(elements[1].Text);
 
-            driver.FindElement(By.XPath("//div[contains(text(),'Forgot User')]")).Click();
+            for(int i=0;i<linkCount;i++)
+            {
+                Console.WriteLine(elements[i].Text);
+                string href=elements[i].GetAttribute("href");
+                Console.WriteLine(href);
+            }
 
-            driver.FindElement(By.LinkText("select your product type")).Click();
-            driver.FindElement(By.LinkText("Credit Card")).Click();
-
-            //not working
-            //driver.FindElement(By.Id("bill-date-long")).SendKeys("20/03/2000");
-
-            driver.FindElement(By.CssSelector("#bill-date-long")).Click();
-
-            SelectElement selMon = new SelectElement(driver.FindElement(By.CssSelector("select[data-handler='selectMonth']")));
-            selMon.SelectByText("Mar");
-
-            SelectElement selectYr = new SelectElement(driver.FindElement(By.CssSelector("[data-handler='selectYear']")));
-            selectYr.SelectByText("2000");
-
-            driver.FindElement(By.XPath("//a[text()='20']")).Click();
+            foreach (IWebElement ele  in elements )
+            {
+                Console.WriteLine(ele.Text);
+                string href = ele.GetAttribute("href");
+                Console.WriteLine(href);
+            }
 
 
+            foreach (var ele in elements)
+            {
+                Console.WriteLine(ele.Text);
+                string href = ele.GetAttribute("href");
+                Console.WriteLine(href);
+            }
         }
     }
 }

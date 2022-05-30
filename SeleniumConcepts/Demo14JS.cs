@@ -31,7 +31,12 @@ namespace SeleniumConcepts
             driver.Url = "https://www.online.citibank.co.in/";
 
             //img[@class='appClose']
-            driver.FindElement(By.ClassName("appClose")).Click();
+            //check for presence of element 
+            if(driver.FindElements(By.ClassName("appClose")).Count()>0)
+            {
+                driver.FindElement(By.ClassName("appClose")).Click();
+            }
+            
 
             driver.FindElement(By.XPath("//span[text()='Login']")).Click();
 

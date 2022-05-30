@@ -57,3 +57,29 @@ CSS Selector
 tagname[attribute='value']
 [attribute='value']
 
+
+JS 
+document.querySelector('#bill-date-long').click()
+document.querySelector('#checkin').value='17-06-2022'
+
+document.querySelector('#bill-date-long').scrollIntoView()
+
+
+  string cvv=js.ExecuteScript("return document.querySelector('#cvvnumber').value").ToString();
+            Console.WriteLine( cvv);
+
+            string title = js.ExecuteScript("return document.title").ToString();
+            Console.WriteLine(title);
+
+
+--------
+extract detail from video, graph, tooltip 
+document.querySelectorAll(".video-stream.html5-main-video")
+
+----
+
+0->1st webelement 
+1->2 nd webelement 
+
+...
+24-> 25th element
