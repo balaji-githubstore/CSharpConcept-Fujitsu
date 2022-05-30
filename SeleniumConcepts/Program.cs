@@ -23,11 +23,33 @@ namespace SeleniumConcepts
             driver.Manage().Window.Maximize();
             driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
 
-            //driver.get('http://domain\username:password@abc.com')
+            driver.Url = "https://www.online.citibank.co.in/";
 
-            driver.Url = "https://john:john123@softwaretesting.com/";
+            //img[@class='appClose']
+            driver.FindElement(By.ClassName("appClose")).Click();
 
-           // driver.SwitchTo().Alert().SetAuthenticationCredentials("john", "john123");
+            driver.FindElement(By.XPath("//span[text()='Login']")).Click();
+
+            driver.SwitchTo().Window(driver.WindowHandles[1]);
+
+            driver.FindElement(By.XPath("//div[contains(text(),'Forgot User')]")).Click();
+
+            driver.FindElement(By.LinkText("select your product type")).Click();
+            driver.FindElement(By.LinkText("Credit Card")).Click();
+
+            //not working
+            //driver.FindElement(By.Id("bill-date-long")).SendKeys("20/03/2000");
+
+            driver.FindElement(By.CssSelector("#bill-date-long")).Click();
+
+            SelectElement selMon = new SelectElement(driver.FindElement(By.CssSelector("select[data-handler='selectMonth']")));
+            selMon.SelectByText("Mar");
+
+            SelectElement selectYr = new SelectElement(driver.FindElement(By.CssSelector("[data-handler='selectYear']")));
+            selectYr.SelectByText("2000");
+
+            driver.FindElement(By.XPath("//a[text()='20']")).Click();
+
 
         }
     }
