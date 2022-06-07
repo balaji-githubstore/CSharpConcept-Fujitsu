@@ -19,9 +19,9 @@ using System.Diagnostics;
 namespace SeleniumConcepts
 {
     //Unhandled exception.OpenQA.Selenium.ElementNotInteractableException: element not interactable
-    internal class Program
+    internal class Demo18
     {
-        static void Main(String[] args)
+        static void Main2(String[] args)
         {
             IWebDriver driver = new ChromeDriver();
             driver.Manage().Window.Maximize();
@@ -31,18 +31,20 @@ namespace SeleniumConcepts
 
 
             //WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(20));
-           
             DefaultWait<IWebDriver> wait = new DefaultWait<IWebDriver>(driver);
             // wait.IgnoreExceptionTypes(typeof(NoAlertPresentException),typeof(NoSuchElementException));
             wait.IgnoreExceptionTypes(typeof(Exception));
             wait.Timeout = TimeSpan.FromSeconds(20);
-            // wait.PollingInterval= TimeSpan.FromSeconds(1);
+           // wait.PollingInterval= TimeSpan.FromSeconds(1);
 
-            string text = wait.Until(x => x.SwitchTo().Alert()).Text;
+           IWebElement ele= wait.Until(x => x.FindElement(By.XPath("//king")));
 
-            wait.Until(x => x.SwitchTo().Alert()).Accept();
+            ele.Click();
 
-            wait.Until(x => x.FindElement(By.XPath(""))).SendKeys("hello");
+         // string title=  wait.Until(x => x.Title);
+
+            //driver.FindElement(By.XPath("//king")).Click();
+            
         }
     }
 }
