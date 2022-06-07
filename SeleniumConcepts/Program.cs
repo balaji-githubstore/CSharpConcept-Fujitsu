@@ -15,6 +15,7 @@ using FlaUI.UIA3;
 using FlaUI.Core;
 using FlaUI.Core.AutomationElements;
 using System.Diagnostics;
+using System.Drawing;
 
 namespace SeleniumConcepts
 {
@@ -23,26 +24,41 @@ namespace SeleniumConcepts
     {
         static void Main(String[] args)
         {
-            IWebDriver driver = new ChromeDriver();
+            ChromeOptions opt = new ChromeOptions();
+            opt.AddArgument("--disable-notifications");
+            //opt.AddArgument("--Headless");
+            //opt.AcceptInsecureCertificates = true;
+
+            Dictionary<string, string> prefs = new Dictionary<string, string>();
+            prefs.Add("download.default_directory", @"C:\");
+
+   //        opt.AddUserProfilePreference("prefs", prefs);
+
+           
+
+            IWebDriver driver = new ChromeDriver(opt);
             driver.Manage().Window.Maximize();
             driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(5);
 
-            driver.Url = "https://www.ilovepdf.com/pdf_to_word";
+            driver.Url = "https://www.irctc.co.in/nget/train-search";
 
+            Console.WriteLine(driver.Title);
 
-            //WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(20));
-           
-            DefaultWait<IWebDriver> wait = new DefaultWait<IWebDriver>(driver);
-            // wait.IgnoreExceptionTypes(typeof(NoAlertPresentException),typeof(NoSuchElementException));
-            wait.IgnoreExceptionTypes(typeof(Exception));
-            wait.Timeout = TimeSpan.FromSeconds(20);
-            // wait.PollingInterval= TimeSpan.FromSeconds(1);
+            Size s=driver.Manage().Window.Size;
+            Console.WriteLine(s.Width);
+            Console.WriteLine(s.Height);
 
-            string text = wait.Until(x => x.SwitchTo().Alert()).Text;
+            // driver.Quit();
 
-            wait.Until(x => x.SwitchTo().Alert()).Accept();
+            Size s2 = new Size(500, 700);
+            driver.Manage().Window.Size = s2;
 
-            wait.Until(x => x.FindElement(By.XPath(""))).SendKeys("hello");
+            driver.Url = "https://www.irctc.co.in/nget/train-search";
+            driver.Manage().Window.Maximize();
+            Point p=  driver.FindElement(By.XPath("//button[normalize-space()='OK']")).Location;
+            Console.WriteLine(p.X);
+            Console.WriteLine(p.Y);
+
         }
     }
 }
